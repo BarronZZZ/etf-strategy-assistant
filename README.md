@@ -133,3 +133,112 @@ scripts/     One-click run scripts and automation management scripts
 ## Disclaimer
 
 This project is for personal research and portfolio monitoring only. It is not financial advice.
+
+## 10. V1.1 Dashboard and Entry Decision
+
+Version V1.1 adds a rule-based entry decision dashboard.
+
+The dashboard combines:
+
+- Market trend signals
+- VTI and SPY 200-day moving average status
+- VTI 252-day drawdown
+- VIX risk state
+- yfinance and Alpha Vantage price cross-validation
+- Current account status
+- Entry decision rules
+- Suggested buy amount by ETF
+
+Latest dashboard file:
+
+reports/dashboard_latest.html
+
+Open the dashboard locally:
+
+bash scripts/manage_daily_report.sh dashboard
+
+Run the full daily workflow manually:
+
+bash scripts/manage_daily_report.sh run-now
+
+The dashboard can show one of the following rule-based recommendations:
+
+- Allow initial entry
+- Small initial entry
+- Wait
+- Manual review
+- Monthly DCA
+- Manual rebalance review
+
+All recommendations are rule-based monitoring outputs only.
+
+The system does not place trades automatically.
+
+All buy, sell, rebalance, or allocation decisions require manual confirmation.
+
+## 11. Entry Decision Logic
+
+The current account status is stored in:
+
+config/account_status_usd.csv
+
+The entry decision rules are stored in:
+
+config/entry_decision_rules.csv
+
+For an empty-position account, the system checks:
+
+- Whether data cross-validation passed
+- Whether VTI is above its 200-day moving average
+- Whether SPY is above its 200-day moving average
+- Whether VIX is below or above risk thresholds
+- Whether VTI has triggered -10%, -15%, or -25% drawdown levels
+
+If data cross-validation is not passed, the system blocks buy recommendations and returns WAIT.
+
+If the market condition is normal and the account is empty, the system may suggest the initial planned entry amount.
+
+Current default initial entry amount:
+
+USD 20,000
+
+Current default monthly DCA amount:
+
+USD 5,000
+
+## 12. Claude Code Support
+
+This repository includes:
+
+CLAUDE.md
+
+Claude Code should read this file before modifying the project.
+
+The file explains:
+
+- Project purpose
+- Safety rules
+- Files that must not be modified or committed
+- API key protection
+- No automatic trading rule
+- Daily workflow scripts
+- Dashboard requirements
+- Git safety checks
+
+Claude Code can help with:
+
+- Code refactoring
+- Bug fixes
+- Dashboard improvements
+- README updates
+- Report layout improvements
+- Adding tests
+- Creating pull requests
+
+Claude Code must not:
+
+- Commit .env
+- Reveal API keys
+- Enable automatic trading
+- Change allocation rules silently
+- Connect to live brokerage trading without explicit human approval
