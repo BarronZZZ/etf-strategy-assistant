@@ -276,12 +276,17 @@ for ticker in validation_tickers:
     latest_common_date = common_dates_sorted.max()
     today_date = pd.Timestamp(datetime.now().date())
 
-    if latest_common_date.normalize() == today_date and len(common_dates_sorted) >= 2:
+    # 为避免最新交易日数据源更新时间、复权口径或缓存刷新不同造成误判：
+    # 如果最新共同日期是今天或昨天，默认使用前一个共同交易日。
+    # 这个系统是长期 ETF 入场辅助，不需要用最激进的最新一天做交叉验证。
+    stable_cutoff_date = today_date - pd.Timedelta(days=1)
+
+    if latest_common_date.normalize() >= stable_cutoff_date and len(common_dates_sorted) >= 2:
         common_date = common_dates_sorted[-2]
-        date_selection_note = "使用前一个共同交易日，避免盘中数据误判"
+        date_selection_note = "使用前一个共同交易日，避免最新交易日数据误判"
     else:
         common_date = latest_common_date
-        date_selection_note = "使用最新共同交易日"
+        date_selection_note = "使用最新稳定共同交易日"
 
     yf_close = float(yf_s.loc[common_date])
     av_close = float(av_s.loc[common_date])

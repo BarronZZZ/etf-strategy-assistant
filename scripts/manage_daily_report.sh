@@ -14,6 +14,8 @@ HTML_REPORT="$PROJECT_DIR/reports/daily_market_report_v2_latest.html"
 MD_REPORT="$PROJECT_DIR/reports/daily_market_report_v2_latest.md"
 DASHBOARD_REPORT="$PROJECT_DIR/reports/dashboard_latest.html"
 ENTRY_DECISION_REPORT="$PROJECT_DIR/reports/daily_entry_decision_latest.md"
+MARKET_SCORE_REPORT="$PROJECT_DIR/reports/market_indicator_score_latest.md"
+MARKET_SCORE_CSV="$PROJECT_DIR/data/processed/market_indicator_score_latest.csv"
 
 case "$1" in
 
@@ -45,6 +47,14 @@ case "$1" in
     echo ""
     echo "入场决策报告：$ENTRY_DECISION_REPORT"
     [ -f "$ENTRY_DECISION_REPORT" ] && echo "入场决策：存在" || echo "入场决策：不存在"
+
+    echo ""
+    echo "Market Score Markdown 报告：$MARKET_SCORE_REPORT"
+    [ -f "$MARKET_SCORE_REPORT" ] && echo "Market Score Markdown：存在" || echo "Market Score Markdown：不存在"
+
+    echo ""
+    echo "Market Score CSV 数据：$MARKET_SCORE_CSV"
+    [ -f "$MARKET_SCORE_CSV" ] && echo "Market Score CSV：存在" || echo "Market Score CSV：不存在"
     ;;
 
   run)
@@ -101,6 +111,15 @@ case "$1" in
     open "$ENTRY_DECISION_REPORT"
     ;;
 
+  score|market-score)
+    echo "打开 Market Score Markdown 报告..."
+    if command -v code >/dev/null 2>&1; then
+      code "$MARKET_SCORE_REPORT"
+    else
+      open -a TextEdit "$MARKET_SCORE_REPORT"
+    fi
+    ;;
+
   open-md)
     echo "打开 Markdown 最新早报..."
     open "$MD_REPORT"
@@ -141,7 +160,7 @@ case "$1" in
     ;;
 
   *)
-    echo "用法：bash scripts/manage_daily_report.sh {status|run|run-now|log|err|today|open|dashboard|entry|open-md|stop|load|unload|remove}"
+    echo "用法：bash scripts/manage_daily_report.sh {status|run|run-now|log|err|today|open|dashboard|entry|score|open-md|stop|load|unload|remove}"
     echo ""
     echo "常用命令："
     echo "  status      查看自动任务状态和报告文件"
@@ -152,7 +171,7 @@ case "$1" in
     echo "  today       查看今日完整运行日志"
     echo "  open        打开普通 HTML 早报"
     echo "  dashboard   打开 Dashboard 报告"
-    echo "  entry       打开入场决策报告"
+    echo "  entry       打开入场决策报告"\n    echo "  score       打开 Market Score 报告"
     echo "  stop        停止当前正在运行的任务"
     ;;
 
