@@ -1,0 +1,13 @@
+ticker,success,source_type,latest_date,rows,cache_path,notes
+SPY,True,cache,2026-06-10,100,/Users/bz/etf-strategy-assistant/data/raw/alpha_vantage_daily_SPY_2026-06-10.csv,下载成功
+QQQ,True,cache,2026-06-10,100,/Users/bz/etf-strategy-assistant/data/raw/alpha_vantage_daily_QQQ_2026-06-10.csv,下载成功
+VTI,True,cache,2026-06-10,100,/Users/bz/etf-strategy-assistant/data/raw/alpha_vantage_daily_VTI_2026-06-10.csv,下载成功
+VEA,True,cache,2026-06-10,100,/Users/bz/etf-strategy-assistant/data/raw/alpha_vantage_daily_VEA_2026-06-10.csv,下载成功
+VWO,True,cache,2026-06-10,100,/Users/bz/etf-strategy-assistant/data/raw/alpha_vantage_daily_VWO_2026-06-10.csv,下载成功
+TLT,True,cache,2026-06-10,100,/Users/bz/etf-strategy-assistant/data/raw/alpha_vantage_daily_TLT_2026-06-10.csv,下载成功
+GLD,True,cache,2026-06-10,100,/Users/bz/etf-strategy-assistant/data/raw/alpha_vantage_daily_GLD_2026-06-10.csv,下载成功
+IWM,True,cache,2026-06-10,100,/Users/bz/etf-strategy-assistant/data/raw/alpha_vantage_daily_IWM_2026-06-10.csv,下载成功
+XLK,True,cache,2026-06-10,100,/Users/bz/etf-strategy-assistant/data/raw/alpha_vantage_daily_XLK_2026-06-10.csv,下载成功
+XLF,True,cache,2026-06-10,100,/Users/bz/etf-strategy-assistant/data/raw/alpha_vantage_daily_XLF_2026-06-10.csv,下载成功
+XLV,True,cache,2026-06-10,100,/Users/bz/etf-strategy-assistant/data/raw/alpha_vantage_daily_XLV_2026-06-10.csv,下载成功
+XLE,True,cache,2026-06-10,100,/Users/bz/etf-strategy-assistant/data/raw/alpha_vantage_daily_XLE_2026-06-10.csv,下载成功

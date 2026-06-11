@@ -1,0 +1,5 @@
+ticker,name,role,target_weight,target_amount,account,currency,category,notes
+VTI,Vanguard Total Stock Market ETF,美国全市场核心,0.64,32000,USD账户,USD,Core Equity,长期核心仓位
+VEA,Vanguard FTSE Developed Markets ETF,发达市场,0.20,10000,USD账户,USD,Developed ex-US,补充欧洲日本英国澳洲等发达市场
+VWO,Vanguard FTSE Emerging Markets ETF,新兴市场,0.10,5000,USD账户,USD,Emerging Markets,长期小比例成长敞口
+SGOV,iShares 0-3 Month Treasury Bond ETF,美元现金短债,0.06,3000,USD账户,USD,Cash Treasury,现金缓冲和后续补仓资金

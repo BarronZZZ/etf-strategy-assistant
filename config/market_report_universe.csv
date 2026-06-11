@@ -1,0 +1,19 @@
+ticker,name,type,role,importance,notes
+SPY,SPDR S&P 500 ETF Trust,ETF,美股大盘基准,high,判断美股整体风险状态
+QQQ,Invesco QQQ Trust,ETF,纳斯达克成长股,high,判断科技成长风格强弱
+VTI,Vanguard Total Stock Market ETF,ETF,长期核心美股仓位,high,长期账户核心风险信号
+VEA,Vanguard FTSE Developed Markets ETF,ETF,发达市场,medium,长期账户海外发达市场
+VWO,Vanguard FTSE Emerging Markets ETF,ETF,新兴市场,medium,长期账户新兴市场
+SGOV,iShares 0-3 Month Treasury Bond ETF,ETF,美元现金短债,high,长期账户现金缓冲
+TLT,iShares 20+ Year Treasury Bond ETF,ETF,长期美债,medium,观察利率和避险交易
+GLD,SPDR Gold Shares,ETF,黄金,medium,观察避险和通胀预期
+IWM,iShares Russell 2000 ETF,ETF,美国小盘股,medium,观察风险偏好
+XLK,Technology Select Sector SPDR Fund,ETF,科技行业,medium,观察科技板块
+XLF,Financial Select Sector SPDR Fund,ETF,金融行业,medium,观察金融板块
+XLV,Health Care Select Sector SPDR Fund,ETF,医疗行业,medium,观察防守板块
+XLE,Energy Select Sector SPDR Fund,ETF,能源行业,medium,观察能源板块
+BIL,SPDR Bloomberg 1-3 Month T-Bill ETF,ETF,短债现金对照,medium,和SGOV对照
+^VIX,CBOE Volatility Index,Index,市场恐慌指数,high,VIX越高市场风险越高
+^TNX,10-Year Treasury Yield,Index,10年期美债收益率,high,判断利率压力
+DX-Y.NYB,US Dollar Index,Index,美元指数,medium,观察美元强弱
+CL=F,Crude Oil Futures,Futures,原油期货,medium,观察能源和通胀压力

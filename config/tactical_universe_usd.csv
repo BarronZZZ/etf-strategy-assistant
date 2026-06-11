@@ -1,0 +1,11 @@
+ticker,name,role,category,notes
+SPY,SPDR S&P 500 ETF Trust,美股大盘基准,US Large Cap,用于观察美股整体趋势
+QQQ,Invesco QQQ Trust,纳斯达克成长股,Growth Tech,用于观察科技成长风格
+TLT,iShares 20+ Year Treasury Bond ETF,长期美债防守资产,Long Treasury,用于观察利率和避险交易
+GLD,SPDR Gold Shares,黄金避险资产,Gold,用于观察避险和通胀预期
+IWM,iShares Russell 2000 ETF,美国小盘股,Small Cap,用于观察小盘风格
+XLK,Technology Select Sector SPDR Fund,科技行业,Sector Tech,用于观察科技板块
+XLF,Financial Select Sector SPDR Fund,金融行业,Sector Financials,用于观察金融板块
+XLV,Health Care Select Sector SPDR Fund,医疗行业,Sector Healthcare,用于观察医疗板块
+XLE,Energy Select Sector SPDR Fund,能源行业,Sector Energy,用于观察能源板块
+BIL,SPDR Bloomberg 1-3 Month T-Bill ETF,短债现金对照,Cash Treasury,用于和SGOV对照

@@ -1,0 +1,13 @@
+rule_id,category,condition,meaning,action_level,auto_trade
+VTI_ABOVE_200MA,trend,VTI close > VTI 200d MA,长期趋势健康,normal,false
+VTI_BELOW_200MA,trend,VTI close < VTI 200d MA,长期趋势转弱,warning,false
+VTI_DD_10,risk,VTI 252d drawdown <= -10%,VTI从一年高点回撤超过10%,watch,false
+VTI_DD_15,risk,VTI 252d drawdown <= -15%,VTI从一年高点回撤超过15%,alert,false
+VTI_DD_25,risk,VTI 252d drawdown <= -25%,VTI从一年高点回撤超过25%,high_alert,false
+SPY_BELOW_200MA,risk,SPY close < SPY 200d MA,美股大盘跌破长期均线,warning,false
+QQQ_STRONG,rotation,QQQ 3m return > SPY 3m return,科技成长强于大盘,info,false
+TLT_STRONG_DEFENSE,defense,TLT 1m return > SPY 1m return,债券防守资产相对走强,info,false
+GLD_STRONG_DEFENSE,defense,GLD 1m return > SPY 1m return,黄金防守资产相对走强,info,false
+VIX_HIGH,risk,VIX > 25,市场波动风险较高,alert,false
+VIX_EXTREME,risk,VIX > 35,市场恐慌情绪极高,high_alert,false
+REBALANCE_ALERT,portfolio,actual weight deviation > 5%,长期组合权重偏离目标较大,watch,false

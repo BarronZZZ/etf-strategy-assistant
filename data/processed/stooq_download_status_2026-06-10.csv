@@ -1,0 +1,13 @@
+ticker,stooq_available,used_symbol,latest_date,notes
+SPY,False,,,Stooq 下载失败或无可用 CSV
+QQQ,False,,,Stooq 下载失败或无可用 CSV
+VTI,False,,,Stooq 下载失败或无可用 CSV
+VEA,False,,,Stooq 下载失败或无可用 CSV
+VWO,False,,,Stooq 下载失败或无可用 CSV
+TLT,False,,,Stooq 下载失败或无可用 CSV
+GLD,False,,,Stooq 下载失败或无可用 CSV
+IWM,False,,,Stooq 下载失败或无可用 CSV
+XLK,False,,,Stooq 下载失败或无可用 CSV
+XLF,False,,,Stooq 下载失败或无可用 CSV
+XLV,False,,,Stooq 下载失败或无可用 CSV
+XLE,False,,,Stooq 下载失败或无可用 CSV

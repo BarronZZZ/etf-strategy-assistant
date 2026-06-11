@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>每日市场早报 V2 - 2026-06-10</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f6f8;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+h2 {
+    margin-top: 32px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ddd;
+}
+
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.card-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.card-value {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.normal {
+    color: #147a3e;
+}
+
+.warning {
+    color: #b36b00;
+}
+
+.watch {
+    color: #7a5c00;
+}
+
+.danger {
+    color: #b00020;
+}
+
+.summary {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    line-height: 1.7;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.data-table th {
+    background: #eef1f5;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.data-table td {
+    padding: 9px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.data-table tr:hover {
+    background: #f9fbff;
+}
+
+.footer {
+    color: #666;
+    font-size: 13px;
+    margin-top: 36px;
+    line-height: 1.6;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #eef1f5;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>每日市场早报 V2</h1>
+<div class="badge">生成日期：2026-06-10</div>
+
+<div class="card-row">
+    <div class="card">
+        <div class="card-title">市场状态</div>
+        <div class="card-value normal">正常</div>
+    </div>
+    <div class="card">
+        <div class="card-title">数据交叉验证</div>
+        <div class="card-value normal">passed</div>
+    </div>
+    <div class="card">
+        <div class="card-title">交易权限</div>
+        <div class="card-value">提醒模式</div>
+    </div>
+</div>
+
+<div class="summary">
+    <strong>综合结论：</strong><br>
+    数据验证：12/12 个标的通过 yfinance 与 Alpha Vantage 价格交叉验证。<br>
+    交易权限：自动交易关闭；允许生成交易提醒<br>
+    操作摘要：长期账户按固定计划执行；短线账户只做观察，不自动交易。
+</div>
+
+<h2>1. 长期核心账户观察</h2>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>latest_price</th>
+      <th>return_1d</th>
+      <th>return_1m</th>
+      <th>return_3m</th>
+      <th>return_6m</th>
+      <th>return_12m</th>
+      <th>above_200ma</th>
+      <th>drawdown_252d</th>
+    </tr>
+    <tr>
+      <th>ticker</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>VTI</th>
+      <td>358.04</td>
+      <td>-1.55%</td>
+      <td>-1.31%</td>
+      <td>9.53%</td>
+      <td>7.12%</td>
+      <td>22.34%</td>
+      <td>是</td>
+      <td>-4.36%</td>
+    </tr>
+    <tr>
+      <th>VEA</th>
+      <td>68.81</td>
+      <td>-1.47%</td>
+      <td>-1.66%</td>
+      <td>6.75%</td>
+      <td>13.35%</td>
+      <td>25.82%</td>
+      <td>是</td>
+      <td>-4.85%</td>
+    </tr>
+    <tr>
+      <th>VWO</th>
+      <td>57.72</td>
+      <td>-1.25%</td>
+      <td>-2.81%</td>
+      <td>6.28%</td>
+      <td>8.77%</td>
+      <td>20.81%</td>
+      <td>是</td>
+      <td>-5.67%</td>
+    </tr>
+    <tr>
+      <th>SGOV</th>
+      <td>100.48</td>
+      <td>0.01%</td>
+      <td>0.28%</td>
+      <td>0.88%</td>
+      <td>1.81%</td>
+      <td>3.93%</td>
+      <td>是</td>
+      <td>0.00%</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>2. 今日触发信号</h2>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>rule_id</th>
+      <th>category</th>
+      <th>action_level</th>
+      <th>meaning</th>
+      <th>detail</th>
+      <th>auto_trade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VTI_ABOVE_200MA</td>
+      <td>trend</td>
+      <td>normal</td>
+      <td>长期趋势健康</td>
+      <td>VTI 最新价 358.04，200日均线 336.80</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>QQQ_STRONG</td>
+      <td>rotation</td>
+      <td>info</td>
+      <td>科技成长强于大盘</td>
+      <td>QQQ 3个月收益 16.29%，SPY 3个月收益 9.21%</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>TLT_STRONG_DEFENSE</td>
+      <td>defense</td>
+      <td>info</td>
+      <td>债券防守资产相对走强</td>
+      <td>TLT 1个月收益 0.26%，SPY 1个月收益 -1.73%</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>3. 数据交叉验证明细</h2>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ticker</th>
+      <th>status</th>
+      <th>common_date</th>
+      <th>yf_close</th>
+      <th>av_close</th>
+      <th>pct_diff</th>
+      <th>pass_price_check</th>
+      <th>notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SPY</td>
+      <td>ok</td>
+      <td>2026-06-10</td>
+      <td>725.43</td>
+      <td>725.43</td>
+      <td>0.00%</td>
+      <td>是</td>
+      <td>通过</td>
+    </tr>
+    <tr>
+      <td>QQQ</td>
+      <td>ok</td>
+      <td>2026-06-10</td>
+      <td>693.69</td>
+      <td>693.69</td>
+      <td>0.00%</td>
+      <td>是</td>
+      <td>通过</td>
+    </tr>
+    <tr>
+      <td>VTI</td>
+      <td>ok</td>
+      <td>2026-06-10</td>
+      <td>358.04</td>
+      <td>358.04</td>
+      <td>0.00%</td>
+      <td>是</td>
+      <td>通过</td>
+    </tr>
+    <tr>
+      <td>VEA</td>
+      <td>ok</td>
+      <td>2026-06-10</td>
+      <td>68.81</td>
+      <td>68.81</td>
+      <td>0.00%</td>
+      <td>是</td>
+      <td>通过</td>
+    </tr>
+    <tr>
+      <td>VWO</td>
+      <td>ok</td>
+      <td>2026-06-10</td>
+      <td>57.72</td>
+      <td>57.72</td>
+      <td>0.00%</td>
+      <td>是</td>
+      <td>通过</td>
+    </tr>
+    <tr>
+      <td>TLT</td>
+      <td>ok</td>
+      <td>2026-06-10</td>
+      <td>84.88</td>
+      <td>84.88</td>
+      <td>0.00%</td>
+      <td>是</td>
+      <td>通过</td>
+    </tr>
+    <tr>
+      <td>GLD</td>
+      <td>ok</td>
+      <td>2026-06-10</td>
+      <td>374.58</td>
+      <td>374.58</td>
+      <td>0.00%</td>
+      <td>是</td>
+      <td>通过</td>
+    </tr>
+    <tr>
+      <td>IWM</td>
+      <td>ok</td>
+      <td>2026-06-10</td>
+      <td>282.05</td>
+      <td>282.05</td>
+      <td>0.00%</td>
+      <td>是</td>
+      <td>通过</td>
+    </tr>
+    <tr>
+      <td>XLK</td>
+      <td>ok</td>
+      <td>2026-06-10</td>
+      <td>176.63</td>
+      <td>176.63</td>
+      <td>0.00%</td>
+      <td>是</td>
+      <td>通过</td>
+    </tr>
+    <tr>
+      <td>XLF</td>
+      <td>ok</td>
+      <td>2026-06-10</td>
+      <td>52.23</td>
+      <td>52.23</td>
+      <td>0.00%</td>
+      <td>是</td>
+      <td>通过</td>
+    </tr>
+    <tr>
+      <td>XLV</td>
+      <td>ok</td>
+      <td>2026-06-10</td>
+      <td>152.85</td>
+      <td>152.85</td>
+      <td>0.00%</td>
+      <td>是</td>
+      <td>通过</td>
+    </tr>
+    <tr>
+      <td>XLE</td>
+      <td>ok</td>
+      <td>2026-06-10</td>
+      <td>58.25</td>
+      <td>58.25</td>
+      <td>0.00%</td>
+      <td>是</td>
+      <td>通过</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. 数据验证异常标的</h2>
+<p>所有交叉验证标的均通过。</p>
+
+<h2>5. 3个月表现靠前标的</h2>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>latest_price</th>
+      <th>return_1m</th>
+      <th>return_3m</th>
+      <th>return_6m</th>
+      <th>return_12m</th>
+      <th>above_200ma</th>
+      <th>drawdown_252d</th>
+    </tr>
+    <tr>
+      <th>ticker</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>XLK</th>
+      <td>176.63</td>
+      <td>0.82%</td>
+      <td>28.30%</td>
+      <td>19.66%</td>
+      <td>47.82%</td>
+      <td>是</td>
+      <td>-10.89%</td>
+    </tr>
+    <tr>
+      <th>QQQ</th>
+      <td>693.69</td>
+      <td>-1.92%</td>
+      <td>16.29%</td>
+      <td>11.26%</td>
+      <td>30.92%</td>
+      <td>是</td>
+      <td>-7.03%</td>
+    </tr>
+    <tr>
+      <th>IWM</th>
+      <td>282.05</td>
+      <td>-0.18%</td>
+      <td>14.20%</td>
+      <td>12.77%</td>
+      <td>33.45%</td>
+      <td>是</td>
+      <td>-3.42%</td>
+    </tr>
+    <tr>
+      <th>VTI</th>
+      <td>358.04</td>
+      <td>-1.31%</td>
+      <td>9.53%</td>
+      <td>7.12%</td>
+      <td>22.34%</td>
+      <td>是</td>
+      <td>-4.36%</td>
+    </tr>
+    <tr>
+      <th>SPY</th>
+      <td>725.43</td>
+      <td>-1.73%</td>
+      <td>9.21%</td>
+      <td>6.81%</td>
+      <td>22.01%</td>
+      <td>是</td>
+      <td>-4.49%</td>
+    </tr>
+    <tr>
+      <th>XLF</th>
+      <td>52.23</td>
+      <td>1.26%</td>
+      <td>7.51%</td>
+      <td>-1.12%</td>
+      <td>3.99%</td>
+      <td>否</td>
+      <td>-6.92%</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>6. 3个月表现靠后标的</h2>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>latest_price</th>
+      <th>return_1m</th>
+      <th>return_3m</th>
+      <th>return_6m</th>
+      <th>return_12m</th>
+      <th>above_200ma</th>
+      <th>drawdown_252d</th>
+    </tr>
+    <tr>
+      <th>ticker</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>GLD</th>
+      <td>374.58</td>
+      <td>-13.48%</td>
+      <td>-19.77%</td>
+      <td>-3.31%</td>
+      <td>21.47%</td>
+      <td>否</td>
+      <td>-24.46%</td>
+    </tr>
+    <tr>
+      <th>^VIX</th>
+      <td>22.22</td>
+      <td>23.51%</td>
+      <td>-18.58%</td>
+      <td>31.25%</td>
+      <td>28.74%</td>
+      <td>是</td>
+      <td>-28.44%</td>
+    </tr>
+    <tr>
+      <th>CL=F</th>
+      <td>92.01</td>
+      <td>-9.95%</td>
+      <td>-3.89%</td>
+      <td>57.96%</td>
+      <td>35.01%</td>
+      <td>是</td>
+      <td>-18.54%</td>
+    </tr>
+    <tr>
+      <th>TLT</th>
+      <td>84.88</td>
+      <td>0.26%</td>
+      <td>-1.26%</td>
+      <td>-1.31%</td>
+      <td>3.03%</td>
+      <td>否</td>
+      <td>-5.14%</td>
+    </tr>
+    <tr>
+      <th>DX-Y.NYB</th>
+      <td>99.96</td>
+      <td>1.70%</td>
+      <td>0.22%</td>
+      <td>0.75%</td>
+      <td>1.35%</td>
+      <td>是</td>
+      <td>-0.55%</td>
+    </tr>
+    <tr>
+      <th>BIL</th>
+      <td>91.47</td>
+      <td>0.27%</td>
+      <td>0.87%</td>
+      <td>1.77%</td>
+      <td>3.86%</td>
+      <td>是</td>
+      <td>0.00%</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer">
+    <strong>说明：</strong><br>
+    本报告使用 yfinance 生成市场表现数据，并使用 Alpha Vantage 做价格交叉验证。<br>
+    如果交叉验证状态不是 passed，本系统不允许自动交易。<br>
+    当前版本只生成提醒，不自动下单，也不构成投资建议。
+</div>
+
+</div>
+</body>
+</html>

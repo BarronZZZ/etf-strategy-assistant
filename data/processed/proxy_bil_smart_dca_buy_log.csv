@@ -1,0 +1,8 @@
+trade_date,amount,type,vti_drawdown_252d,remaining_tranches_after_trade,cash_after_trade
+2015-01-02,20000.0,initial_40pct,,6,30000.0
+2015-02-02,5000.0,regular_monthly_dca,-0.01854428927417684,5,25000.0
+2015-03-02,5000.0,regular_monthly_dca,0.0,4,20000.0
+2015-04-02,5000.0,regular_monthly_dca,-0.017011237032709903,3,15000.0
+2015-05-04,5000.0,regular_monthly_dca,-0.005188862522491622,2,10000.0
+2015-06-02,5000.0,regular_monthly_dca,-0.009139739005024516,1,5000.0
+2015-07-02,5000.0,regular_monthly_dca,-0.02419093924085225,0,0.0

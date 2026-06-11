@@ -1,0 +1,8 @@
+trade_date,amount,type,vti_drawdown_252d,remaining_tranches_after_trade,cash_after_trade
+2020-06-01,20000.0,initial_40pct,,6,30000.0
+2020-07-01,5000.0,regular_monthly_dca,-0.0362175728451275,5,25000.0
+2020-08-03,5000.0,regular_monthly_dca,0.0,4,20000.0
+2020-09-01,5000.0,regular_monthly_dca,0.0,3,15000.0
+2020-10-01,5000.0,regular_monthly_dca,-0.04858519759869795,2,10000.0
+2020-11-02,5000.0,regular_monthly_dca,-0.06520575214649305,1,5000.0
+2020-12-01,5000.0,regular_monthly_dca,0.0,0,0.0

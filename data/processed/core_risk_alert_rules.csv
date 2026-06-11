@@ -1,0 +1,5 @@
+rule_id,signal,action,auto_execute
+VTI_DD_10,VTI_252d_drawdown <= -10%,提醒：可以考虑提前买入下一期，但不自动执行,False
+VTI_DD_15,VTI_252d_drawdown <= -15%,提醒：可以考虑提前买入后续两期，但不自动执行,False
+VTI_DD_25,VTI_252d_drawdown <= -25%,提醒：可以考虑加快完成剩余建仓，但必须人工确认,False
+CORE_REBALANCE,任一ETF实际权重偏离目标权重超过5个百分点,提醒：考虑再平衡，不自动交易,False

@@ -1,0 +1,13 @@
+ticker,status,common_date,yf_latest_date,stooq_latest_date,yf_price,stooq_price,abs_diff,pct_diff,pass_price_check,notes
+SPY,missing_stooq,,2026-06-10,,725.4299926757812,,,,False,Stooq 不可用，无法交叉验证；主数据源 yfinance 可用
+QQQ,missing_stooq,,2026-06-10,,693.6900024414062,,,,False,Stooq 不可用，无法交叉验证；主数据源 yfinance 可用
+VTI,missing_stooq,,2026-06-10,,358.0400085449219,,,,False,Stooq 不可用，无法交叉验证；主数据源 yfinance 可用
+VEA,missing_stooq,,2026-06-10,,68.80999755859375,,,,False,Stooq 不可用，无法交叉验证；主数据源 yfinance 可用
+VWO,missing_stooq,,2026-06-10,,57.720001220703125,,,,False,Stooq 不可用，无法交叉验证；主数据源 yfinance 可用
+TLT,missing_stooq,,2026-06-10,,84.87999725341797,,,,False,Stooq 不可用，无法交叉验证；主数据源 yfinance 可用
+GLD,missing_stooq,,2026-06-10,,374.5799865722656,,,,False,Stooq 不可用，无法交叉验证；主数据源 yfinance 可用
+IWM,missing_stooq,,2026-06-10,,282.04998779296875,,,,False,Stooq 不可用，无法交叉验证；主数据源 yfinance 可用
+XLK,missing_stooq,,2026-06-10,,176.6300048828125,,,,False,Stooq 不可用，无法交叉验证；主数据源 yfinance 可用
+XLF,missing_stooq,,2026-06-10,,52.22999954223633,,,,False,Stooq 不可用，无法交叉验证；主数据源 yfinance 可用
+XLV,missing_stooq,,2026-06-10,,152.85000610351562,,,,False,Stooq 不可用，无法交叉验证；主数据源 yfinance 可用
+XLE,missing_stooq,,2026-06-10,,58.25,,,,False,Stooq 不可用，无法交叉验证；主数据源 yfinance 可用
