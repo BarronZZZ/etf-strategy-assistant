@@ -1,12 +1,12 @@
 rule_id,category,triggered,meaning,action_level,auto_trade,detail
-VTI_ABOVE_200MA,trend,True,长期趋势健康,normal,False,VTI 最新价 358.04，200日均线 336.80
-VTI_BELOW_200MA,trend,False,长期趋势转弱,warning,False,VTI 最新价 358.04，200日均线 336.80
-VTI_DD_10,risk,False,VTI从一年高点回撤超过10%,watch,False,VTI 252日高点回撤 -4.36%
-VTI_DD_15,risk,False,VTI从一年高点回撤超过15%,alert,False,VTI 252日高点回撤 -4.36%
-VTI_DD_25,risk,False,VTI从一年高点回撤超过25%,high_alert,False,VTI 252日高点回撤 -4.36%
-SPY_BELOW_200MA,risk,False,美股大盘跌破长期均线,warning,False,SPY 最新价 725.43，200日均线 683.60
-QQQ_STRONG,rotation,True,科技成长强于大盘,info,False,QQQ 3个月收益 16.29%，SPY 3个月收益 9.21%
-TLT_STRONG_DEFENSE,defense,True,债券防守资产相对走强,info,False,TLT 1个月收益 0.26%，SPY 1个月收益 -1.73%
-GLD_STRONG_DEFENSE,defense,False,黄金防守资产相对走强,info,False,GLD 1个月收益 -13.48%，SPY 1个月收益 -1.73%
-VIX_HIGH,risk,False,市场波动风险较高,alert,False,VIX 当前值 22.22
-VIX_EXTREME,risk,False,市场恐慌情绪极高,high_alert,False,VIX 当前值 22.22
+VTI_ABOVE_200MA,trend,True,长期趋势健康,normal,False,VTI 最新价 363.67，200日均线 337.07
+VTI_BELOW_200MA,trend,False,长期趋势转弱,warning,False,VTI 最新价 363.67，200日均线 337.07
+VTI_DD_10,risk,False,VTI从一年高点回撤超过10%,watch,False,VTI 252日高点回撤 -2.86%
+VTI_DD_15,risk,False,VTI从一年高点回撤超过15%,alert,False,VTI 252日高点回撤 -2.86%
+VTI_DD_25,risk,False,VTI从一年高点回撤超过25%,high_alert,False,VTI 252日高点回撤 -2.86%
+SPY_BELOW_200MA,risk,False,美股大盘跌破长期均线,warning,False,SPY 最新价 737.05，200日均线 684.15
+QQQ_STRONG,rotation,True,科技成长强于大盘,info,False,QQQ 3个月收益 19.37%，SPY 3个月收益 11.59%
+TLT_STRONG_DEFENSE,defense,True,债券防守资产相对走强,info,False,TLT 1个月收益 0.77%，SPY 1个月收益 -0.71%
+GLD_STRONG_DEFENSE,defense,False,黄金防守资产相对走强,info,False,GLD 1个月收益 -9.23%，SPY 1个月收益 -0.71%
+VIX_HIGH,risk,False,市场波动风险较高,alert,False,VIX 当前值 19.87
+VIX_EXTREME,risk,False,市场恐慌情绪极高,high_alert,False,VIX 当前值 19.87

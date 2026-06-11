@@ -1,0 +1,13 @@
+item,value,notes
+account_currency,USD,账户基础货币
+total_planned_capital,50000,计划投入总金额
+current_cash,50000,当前尚未投入资金
+invested_amount,0,当前已投入金额
+position_status,empty,当前为空仓
+initial_entry_done,false,是否已经完成首笔建仓
+initial_entry_amount,20000,计划首笔建仓金额
+monthly_dca_amount,5000,后续每月定投金额
+monthly_dca_months,6,后续定投月数
+auto_trade_enabled,false,不允许自动交易
+decision_mode,manual_confirm,所有买入建议都需要人工确认
+strategy_version,V1.1,加入入场决策和dashboard升级

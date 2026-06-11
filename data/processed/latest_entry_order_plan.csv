@@ -1,0 +1,5 @@
+date,ticker,role,target_weight,suggested_buy_amount,currency,account,action_type,auto_trade,notes
+2026-06-10,VTI,美国全市场核心,0.64,12800.0,USD,USD账户,BUY_INITIAL_STANDARD,False,仅为规则建议，必须人工确认
+2026-06-10,VEA,发达市场,0.2,4000.0,USD,USD账户,BUY_INITIAL_STANDARD,False,仅为规则建议，必须人工确认
+2026-06-10,VWO,新兴市场,0.1,2000.0,USD,USD账户,BUY_INITIAL_STANDARD,False,仅为规则建议，必须人工确认
+2026-06-10,SGOV,美元现金短债,0.06,1200.0,USD,USD账户,BUY_INITIAL_STANDARD,False,仅为规则建议，必须人工确认

@@ -269,7 +269,19 @@ for ticker in validation_tickers:
         })
         continue
 
-    common_date = common_dates.max()
+    # 为避免盘中数据误判：
+    # 如果最新共同日期是今天，默认使用前一个共同交易日进行交叉验证。
+    # 原因：yfinance 在盘中可能更新当日价格，而 Alpha Vantage/cache 可能仍是旧收盘或延迟数据。
+    common_dates_sorted = common_dates.sort_values()
+    latest_common_date = common_dates_sorted.max()
+    today_date = pd.Timestamp(datetime.now().date())
+
+    if latest_common_date.normalize() == today_date and len(common_dates_sorted) >= 2:
+        common_date = common_dates_sorted[-2]
+        date_selection_note = "使用前一个共同交易日，避免盘中数据误判"
+    else:
+        common_date = latest_common_date
+        date_selection_note = "使用最新共同交易日"
 
     yf_close = float(yf_s.loc[common_date])
     av_close = float(av_s.loc[common_date])
@@ -290,7 +302,7 @@ for ticker in validation_tickers:
         "abs_diff": abs_diff,
         "pct_diff": pct_diff,
         "pass_price_check": pass_check,
-        "notes": "通过" if pass_check else "价格差异超过1%，需要人工检查"
+        "notes": ("通过；" + date_selection_note) if pass_check else ("价格差异超过1%，需要人工检查；" + date_selection_note)
     })
 
 

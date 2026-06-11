@@ -1,0 +1,11 @@
+rule_id,priority,applies_when,condition,recommendation,action_type,suggested_amount_usd,auto_trade,notes
+DATA_VALIDATION_BLOCK,1,all,data_validation_status != passed,等待,WAIT,0,false,如果数据交叉验证没有通过则不允许生成买入执行建议
+EMPTY_HIGH_RISK_WAIT,2,empty_position,VIX > 35 or VTI below 200MA or SPY below 200MA,等待,WAIT,0,false,空仓遇到高风险或长期趋势转弱时不急于首笔建仓
+EMPTY_ELEVATED_RISK_SMALL_ENTRY,3,empty_position,VIX between 25 and 35 and VTI above 200MA and SPY above 200MA,小额试探买入,BUY_INITIAL_SMALL,10000,false,波动偏高但长期趋势未破时只考虑较小首笔
+EMPTY_NORMAL_INITIAL_ENTRY,4,empty_position,VIX < 25 and VTI above 200MA and SPY above 200MA and VTI drawdown > -10%,允许首笔建仓,BUY_INITIAL_STANDARD,20000,false,正常市场状态下按计划执行首笔40%建仓
+EMPTY_PULLBACK_ENTRY_10,5,empty_position,VTI drawdown <= -10% and VTI drawdown > -15% and VTI above 200MA,允许首笔建仓并保留后续现金,BUY_INITIAL_STANDARD,20000,false,出现10%以上回撤但长期趋势未破时可按计划首笔入场
+EMPTY_PULLBACK_ENTRY_15,6,empty_position,VTI drawdown <= -15% and VTI drawdown > -25%,允许分批加快但需人工确认,BUY_INITIAL_PLUS_ONE_DCA,25000,false,出现15%以上回撤时可考虑首笔加一期定投但必须人工确认
+EMPTY_DEEP_PULLBACK_MANUAL,7,empty_position,VTI drawdown <= -25%,深度回撤人工确认,MANUAL_REVIEW,0,false,深度回撤可能是机会也可能是系统性风险必须人工判断
+AFTER_ENTRY_NORMAL_DCA,8,invested_position,initial_entry_done = true and market_status normal,继续月度定投,MONTHLY_DCA,5000,false,完成首笔后正常状态按每月计划执行
+AFTER_ENTRY_RISK_WAIT,9,invested_position,initial_entry_done = true and market_status high_risk,暂停提前加仓,WAIT,0,false,完成首笔后遇到高风险只观察不提前加仓
+REBALANCE_MANUAL_ONLY,10,all,portfolio deviation > 5%,再平衡人工确认,MANUAL_REBALANCE,0,false,再平衡只提醒不自动交易

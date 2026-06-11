@@ -3,45 +3,50 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>每日市场早报 V2 - 2026-06-10</title>
+<title>ETF Strategy Dashboard - 2026-06-10</title>
 <style>
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-    background: #f5f6f8;
+    background: #f4f6f8;
     color: #222;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 28px;
 }
 
 h1 {
-    font-size: 30px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    font-size: 32px;
 }
 
 h2 {
-    margin-top: 32px;
+    margin-top: 34px;
     padding-bottom: 8px;
     border-bottom: 2px solid #ddd;
 }
 
+.subtitle {
+    color: #666;
+    margin-bottom: 20px;
+}
+
 .card-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     margin-top: 20px;
 }
 
 .card {
     background: white;
-    border-radius: 14px;
+    border-radius: 16px;
     padding: 18px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
 .card-title {
@@ -56,11 +61,11 @@ h2 {
 }
 
 .normal {
-    color: #147a3e;
+    color: #137333;
 }
 
 .warning {
-    color: #b36b00;
+    color: #b06000;
 }
 
 .watch {
@@ -73,11 +78,34 @@ h2 {
 
 .summary {
     background: white;
-    border-radius: 14px;
-    padding: 18px;
+    border-radius: 16px;
+    padding: 20px;
     margin-top: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    line-height: 1.7;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    line-height: 1.8;
+}
+
+.decision-box {
+    background: #fff;
+    border-left: 8px solid #137333;
+    border-radius: 14px;
+    padding: 22px;
+    margin-top: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.decision-box.warning {
+    border-left-color: #b06000;
+}
+
+.decision-box.danger {
+    border-left-color: #b00020;
+}
+
+.decision-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 12px;
 }
 
 .data-table {
@@ -104,6 +132,31 @@ h2 {
     background: #f9fbff;
 }
 
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.level-card {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.level-title {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.level-value {
+    font-size: 22px;
+    font-weight: 700;
+}
+
 .footer {
     color: #666;
     font-size: 13px;
@@ -124,32 +177,143 @@ h2 {
 <body>
 <div class="container">
 
-<h1>每日市场早报 V2</h1>
-<div class="badge">生成日期：2026-06-10</div>
+<h1>ETF Strategy Dashboard</h1>
+<div class="subtitle">生成日期：2026-06-10 ｜ 账户状态：empty ｜ 自动交易：关闭</div>
 
 <div class="card-row">
+    <div class="card">
+        <div class="card-title">今日建议</div>
+        <div class="card-value normal">允许首笔建仓</div>
+    </div>
+    <div class="card">
+        <div class="card-title">建议金额</div>
+        <div class="card-value">$20,000</div>
+    </div>
     <div class="card">
         <div class="card-title">市场状态</div>
         <div class="card-value normal">正常</div>
     </div>
     <div class="card">
-        <div class="card-title">数据交叉验证</div>
+        <div class="card-title">数据验证</div>
         <div class="card-value normal">passed</div>
     </div>
-    <div class="card">
-        <div class="card-title">交易权限</div>
-        <div class="card-value">提醒模式</div>
+</div>
+
+<div class="decision-box normal">
+    <div class="decision-title">今日规则建议：允许首笔建仓，建议金额 $20,000，但必须人工确认。</div>
+    <div>
+        当前现金：$50,000 ｜ 已投入：$0 ｜ 
+        建议买入后剩余现金：$30,000
+    </div>
+    <div>
+        执行动作：BUY_INITIAL_STANDARD ｜ 执行方式：人工确认 ｜ 自动交易：关闭
     </div>
 </div>
 
-<div class="summary">
-    <strong>综合结论：</strong><br>
-    数据验证：12/12 个标的通过 yfinance 与 Alpha Vantage 价格交叉验证。<br>
-    交易权限：自动交易关闭；允许生成交易提醒<br>
-    操作摘要：长期账户按固定计划执行；短线账户只做观察，不自动交易。
+<h2>1. 入场点位参考</h2>
+
+<div class="level-grid">
+    <div class="level-card">
+        <div class="level-title">VTI 当前价</div>
+        <div class="level-value">363.67</div>
+    </div>
+    <div class="level-card">
+        <div class="level-title">VTI 200日均线</div>
+        <div class="level-value">337.07</div>
+    </div>
+    <div class="level-card">
+        <div class="level-title">VTI 当前回撤</div>
+        <div class="level-value">-2.86%</div>
+    </div>
+    <div class="level-card">
+        <div class="level-title">VIX</div>
+        <div class="level-value">19.87</div>
+    </div>
 </div>
 
-<h2>1. 长期核心账户观察</h2>
+<div class="level-grid">
+    <div class="level-card">
+        <div class="level-title">VTI -10% 回撤参考价</div>
+        <div class="level-value">336.92</div>
+    </div>
+    <div class="level-card">
+        <div class="level-title">VTI -15% 回撤参考价</div>
+        <div class="level-value">318.21</div>
+    </div>
+    <div class="level-card">
+        <div class="level-title">VTI -25% 回撤参考价</div>
+        <div class="level-value">280.77</div>
+    </div>
+    <div class="level-card">
+        <div class="level-title">当前规则</div>
+        <div class="level-value">EMPTY_NORMAL_INITIAL_ENTRY</div>
+    </div>
+</div>
+
+<h2>2. 建议买入明细</h2>
+<table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ticker</th>
+      <th>role</th>
+      <th>target_weight</th>
+      <th>suggested_buy_amount</th>
+      <th>currency</th>
+      <th>account</th>
+      <th>action_type</th>
+      <th>auto_trade</th>
+      <th>notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VTI</td>
+      <td>美国全市场核心</td>
+      <td>64.00%</td>
+      <td>$12,800</td>
+      <td>USD</td>
+      <td>USD账户</td>
+      <td>BUY_INITIAL_STANDARD</td>
+      <td>False</td>
+      <td>仅为规则建议，必须人工确认</td>
+    </tr>
+    <tr>
+      <td>VEA</td>
+      <td>发达市场</td>
+      <td>20.00%</td>
+      <td>$4,000</td>
+      <td>USD</td>
+      <td>USD账户</td>
+      <td>BUY_INITIAL_STANDARD</td>
+      <td>False</td>
+      <td>仅为规则建议，必须人工确认</td>
+    </tr>
+    <tr>
+      <td>VWO</td>
+      <td>新兴市场</td>
+      <td>10.00%</td>
+      <td>$2,000</td>
+      <td>USD</td>
+      <td>USD账户</td>
+      <td>BUY_INITIAL_STANDARD</td>
+      <td>False</td>
+      <td>仅为规则建议，必须人工确认</td>
+    </tr>
+    <tr>
+      <td>SGOV</td>
+      <td>美元现金短债</td>
+      <td>6.00%</td>
+      <td>$1,200</td>
+      <td>USD</td>
+      <td>USD账户</td>
+      <td>BUY_INITIAL_STANDARD</td>
+      <td>False</td>
+      <td>仅为规则建议，必须人工确认</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>3. 长期核心账户观察</h2>
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
@@ -223,7 +387,7 @@ h2 {
   </tbody>
 </table>
 
-<h2>2. 今日触发信号</h2>
+<h2>4. 今日触发信号</h2>
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
@@ -263,7 +427,7 @@ h2 {
   </tbody>
 </table>
 
-<h2>3. 数据交叉验证明细</h2>
+<h2>5. 数据交叉验证</h2>
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
@@ -401,10 +565,7 @@ h2 {
   </tbody>
 </table>
 
-<h2>4. 数据验证异常标的</h2>
-<p>所有交叉验证标的均通过。</p>
-
-<h2>5. 3个月表现靠前标的</h2>
+<h2>6. 3个月表现靠前标的</h2>
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
@@ -492,7 +653,7 @@ h2 {
   </tbody>
 </table>
 
-<h2>6. 3个月表现靠后标的</h2>
+<h2>7. 3个月表现靠后标的</h2>
 <table class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
@@ -582,9 +743,9 @@ h2 {
 
 <div class="footer">
     <strong>说明：</strong><br>
-    本报告使用 yfinance 生成市场表现数据，并使用 Alpha Vantage 做价格交叉验证。<br>
-    如果交叉验证状态不是 passed，本系统不允许自动交易。<br>
-    当前版本只生成提醒，不自动下单，也不构成投资建议。
+    本 Dashboard 使用 yfinance 生成市场表现数据，并使用 Alpha Vantage 做价格交叉验证。<br>
+    今日建议来自本地规则系统，不是自动交易指令。所有买入动作都需要人工确认。<br>
+    本报告用于个人研究、组合监控和决策辅助，不构成投资建议。
 </div>
 
 </div>
