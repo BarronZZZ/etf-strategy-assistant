@@ -1,0 +1,9 @@
+item,value,notes
+commission_per_order,9.90,每笔固定手续费，单位美元
+default_slippage_bps,5,默认滑点，5bps等于0.05%
+min_trade_amount,1000,单笔建议金额低于该值时默认暂缓交易
+max_fee_ratio,0.005,手续费占交易金额比例超过0.5%时默认暂缓交易
+allow_fractional_shares,true,是否允许碎股交易
+buy_slippage_direction,1,买入时成交价按滑点上浮
+sell_slippage_direction,-1,卖出时成交价按滑点下调
+strategy_version,V1.3,交易成本配置版本

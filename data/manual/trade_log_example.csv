@@ -1,0 +1,3 @@
+trade_id,trade_date,ticker,side,shares,order_price,executed_price,gross_amount,commission,slippage_bps,net_cash_flow,account,currency,notes
+T20260612_VTI_001,2026-06-12,VTI,BUY,35.10,364.30,364.48,12791.25,9.90,5,-12801.15,USD账户,USD,示例：首笔买入VTI
+T20260612_VEA_001,2026-06-12,VEA,BUY,56.05,71.31,71.35,3998.17,9.90,5,-4008.07,USD账户,USD,示例：首笔买入VEA
