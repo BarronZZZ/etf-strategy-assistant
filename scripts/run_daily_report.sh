@@ -10,6 +10,10 @@ LOG_FILE="logs/daily_report_${TODAY}.log"
 
 PYTHON="/opt/anaconda3/envs/etf_strategy/bin/python -u"
 
+# 是否在每日报告生成完成后自动打开 Dashboard
+# true = 自动打开；false = 只生成不打开
+AUTO_OPEN_DASHBOARD="${AUTO_OPEN_DASHBOARD:-true}"
+
 echo "========================================" | tee -a "$LOG_FILE"
 echo "ETF Strategy Assistant Daily Report" | tee -a "$LOG_FILE"
 echo "Run date: $TODAY" | tee -a "$LOG_FILE"
@@ -60,4 +64,13 @@ echo "Market Score 报告：" | tee -a "$LOG_FILE"
 echo "$PROJECT_DIR/reports/market_indicator_score_latest.md" | tee -a "$LOG_FILE"
 echo "运行日志：" | tee -a "$LOG_FILE"
 echo "$PROJECT_DIR/$LOG_FILE" | tee -a "$LOG_FILE"
+
+echo "" | tee -a "$LOG_FILE"
+if [ "$AUTO_OPEN_DASHBOARD" = "true" ]; then
+  echo "自动打开 Dashboard 网页..." | tee -a "$LOG_FILE"
+  /usr/bin/open "$PROJECT_DIR/reports/dashboard_latest.html" || echo "自动打开失败，请手动运行：bash scripts/manage_daily_report.sh dashboard" | tee -a "$LOG_FILE"
+else
+  echo "AUTO_OPEN_DASHBOARD=false，已生成报告但不自动打开 Dashboard。" | tee -a "$LOG_FILE"
+fi
+
 echo "========================================" | tee -a "$LOG_FILE"
