@@ -1,0 +1,5 @@
+date,ticker,role,target_weight,shares,avg_cost,last_price,market_value,cost_basis,unrealized_pnl,unrealized_return,realized_pnl,commission_paid,actual_weight_in_positions,actual_weight_total_equity,weight_gap_vs_target
+2026-06-12,VTI,美国全市场核心,0.64,0.0,0.0,365.0798950195313,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.64
+2026-06-12,VEA,发达市场,0.2,0.0,0.0,71.33000183105469,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.2
+2026-06-12,VWO,新兴市场,0.1,0.0,0.0,59.279998779296875,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.1
+2026-06-12,SGOV,美元现金短债,0.06,0.0,0.0,100.5167999267578,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.06

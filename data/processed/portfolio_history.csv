@@ -1,0 +1,2 @@
+date,market_date,account_currency,position_status,starting_cash,cash_balance,cash_change_from_trades,total_market_value,total_cost_basis,total_equity,unrealized_pnl,realized_pnl,total_pnl,cash_weight,invested_weight,trade_count,total_commission,total_trade_gross
+2026-06-12,2026-06-12,USD,empty,50000.0,50000.0,0.0,0.0,0.0,50000.0,0.0,0.0,0.0,1.0,0.0,0,0.0,0.0
