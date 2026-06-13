@@ -24,47 +24,47 @@ echo "Python: $PYTHON" | tee -a "$LOG_FILE"
 echo "========================================" | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
-echo "Step 1/11: 生成每日市场数据和市场信号..." | tee -a "$LOG_FILE"
+echo "Step 1/12: 生成每日市场数据和市场信号..." | tee -a "$LOG_FILE"
 $PYTHON notebooks/09_daily_market_report_v1.py 2>&1 | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
-echo "Step 2/11: 运行 Alpha Vantage 价格交叉验证..." | tee -a "$LOG_FILE"
+echo "Step 2/12: 运行 Alpha Vantage 价格交叉验证..." | tee -a "$LOG_FILE"
 $PYTHON notebooks/11_alpha_vantage_cross_validation.py 2>&1 | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
-echo "Step 3/11: 生成每日入场决策..." | tee -a "$LOG_FILE"
+echo "Step 3/12: 生成每日入场决策..." | tee -a "$LOG_FILE"
 $PYTHON notebooks/14_entry_decision_v1.py 2>&1 | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
-echo "Step 4/11: 生成 Market Indicator Score 多指标评分..." | tee -a "$LOG_FILE"
+echo "Step 4/12: 生成 Market Indicator Score 多指标评分..." | tee -a "$LOG_FILE"
 $PYTHON notebooks/16_market_indicator_score_v1.py 2>&1 | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
-echo "Step 5/11: 生成实仓账户快照..." | tee -a "$LOG_FILE"
+echo "Step 5/12: 生成实仓账户快照..." | tee -a "$LOG_FILE"
 $PYTHON notebooks/17_portfolio_accounting_v1.py 2>&1 | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
-echo "Step 6/11: 生成动态入场点位收益率..." | tee -a "$LOG_FILE"
+echo "Step 6/12: 生成动态入场点位收益率..." | tee -a "$LOG_FILE"
 $PYTHON notebooks/20_dynamic_entry_points_v1.py 2>&1 | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
-echo "Step 7/11: 生成 Markdown 每日市场早报 V2..." | tee -a "$LOG_FILE"
+echo "Step 7/12: 生成 Markdown 每日市场早报 V2..." | tee -a "$LOG_FILE"
 $PYTHON notebooks/12_daily_market_report_v2_with_validation.py 2>&1 | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
-echo "Step 8/11: 生成 HTML 每日市场早报 V2..." | tee -a "$LOG_FILE"
+echo "Step 8/12: 生成 HTML 每日市场早报 V2..." | tee -a "$LOG_FILE"
 $PYTHON notebooks/13_daily_market_report_html.py 2>&1 | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
-echo "Step 9/11: 生成 Dashboard 报告..." | tee -a "$LOG_FILE"
+echo "Step 9/12: 生成 Dashboard 报告..." | tee -a "$LOG_FILE"
 $PYTHON notebooks/15_dashboard_report_v1.py 2>&1 | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
-echo "Step 10/11: 接入 V1.3 实仓账户 Dashboard 模块..." | tee -a "$LOG_FILE"
+echo "Step 10/12: 接入 V1.3 实仓账户 Dashboard 模块..." | tee -a "$LOG_FILE"
 $PYTHON notebooks/19_dashboard_account_section_v1.py 2>&1 | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
-echo "Step 11/11: 接入 V1.4 动态入场点位 Dashboard 模块..." | tee -a "$LOG_FILE"
+echo "Step 11/12: 接入 V1.4 动态入场点位 Dashboard 模块..." | tee -a "$LOG_FILE"
 $PYTHON notebooks/21_dashboard_dynamic_entry_section_v1.py 2>&1 | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
@@ -89,7 +89,11 @@ echo "$PROJECT_DIR/$LOG_FILE" | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
 if [ "$AUTO_OPEN_DASHBOARD" = "true" ]; then
-  echo "自动打开 Dashboard 网页..." | tee -a "$LOG_FILE"
+  
+echo ""
+echo "Step 12/12: 发送 ETF 每日报告邮件..."
+$PYTHON "$PROJECT_DIR/scripts/send_daily_email.py"
+\echo "自动打开 Dashboard 网页..." | tee -a "$LOG_FILE"
   /usr/bin/open "$PROJECT_DIR/reports/dashboard_latest.html" || echo "自动打开失败，请手动运行：bash scripts/manage_daily_report.sh dashboard" | tee -a "$LOG_FILE"
 else
   echo "AUTO_OPEN_DASHBOARD=false，已生成报告但不自动打开 Dashboard。" | tee -a "$LOG_FILE"
